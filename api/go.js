@@ -9,7 +9,7 @@ export default function handler(req, res) {
     // Set agar output yang dikeluarkan berupa halaman HTML utuh
     res.setHeader('Content-Type', 'text/html');
     
-    // Kirim HTML instan ke Facebook / Browser Pengunjung
+    // Kirim HTML instan ke Facebook / Browser Pengunjung dengan pemaksa gambar besar
     res.status(200).send(`
         <!DOCTYPE html>
         <html lang="id">
@@ -19,6 +19,11 @@ export default function handler(req, res) {
             <meta property="og:title" content="${judulPromo}" />
             <meta property="og:description" content="Klik untuk melihat promo selengkapnya..." />
             <meta property="og:image" content="${linkGambar}" />
+            
+            <!-- TAG PENTING: Memaksa Facebook menampilkan pratinjau gambar besar/full -->
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            
             <meta property="og:type" content="website" />
             <title>Mengarahkan ke Halaman Produk...</title>
             <style>
