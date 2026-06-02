@@ -20,12 +20,8 @@ export default function handler(req, res) {
             
             <!-- TRIK BARU: Menyediakan fallback multi-rasio agar AI Facebook dipaksa memilih layout besar -->
             <meta property="og:image:type" content="image/jpeg" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-            
-            <!-- Menambahkan tag cadangan untuk rasio square/potret jika Facebook bersikeras -->
-            <meta property="og:image:width" content="600" />
-            <meta property="og:image:height" content="600" />
+            <meta property="og:image:width" content="1000" />
+            <meta property="og:image:height" content="1000" />
             
             <meta property="og:type" content="website" />
             <title>Mengarahkan ke Halaman Produk...</title>
