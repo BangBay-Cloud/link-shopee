@@ -93,3 +93,13 @@ btnReset.addEventListener('click', () => {
     resultSection.style.display = 'none';
     alert('Form berhasil dikosongkan!');
 });
+
+// Paksa bersihkan semua sisa cache inputan setiap kali halaman di-refresh/dimuat dari nol
+window.addEventListener('load', () => {
+    if(inputJudul) inputJudul.value = '';
+    if(inputGambarHidden) inputGambarHidden.value = '';
+    if(fileGambar) fileGambar.value = '';
+    if(inputShopee) inputShopee.value = '';
+    if(hasilLink) hasilLink.value = '';
+    if(resultSection) resultSection.style.display = 'none';
+});
