@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ========================================== -->
-    <!-- META TAGS UNTUK TAMPILAN FACEBOOK (OPEN GRAPH) -->
-    <!-- ========================================== -->
-    
-    <!-- Judul yang muncul di bawah gambar (Ganti sesuai kebutuhan) -->
-    <meta property="og:title" content="Promo Cuci Gudang Baju Tidur!" />
-    
-    <!-- Deskripsi kecil di bawah judul -->
-    <meta property="og:description" content="Selengkapnya..." />
-    
-    <!-- Link Gambar Clickbait (Pastikan ini adalah link gambar kolase utuh yang sudah diedit) -->
-    <meta property="og:image" content="https://scontent.fcgk6-2.fna.fbcdn.net/v/t45.1600-4/664208234_122175834866838029_2256844097486365047_n.jpg?stp=cp0_dst-jpg_p526x296_q75_sh2.08_spS444_tt6&_nc_cat=107&ccb=1-7&_nc_sid=f0a831&_nc_eui2=AeELlnbJtsS1rszVuUvrlKdY448eJG-JnYrjjx4kb4mdirO72J2cCgDK4CQjZPnSrBXG5SLoxXaiUrWgCoa9HPFA&_nc_ohc=c3QZWcWyLIsQ7kNvwFBDPb1&_nc_oc=AdpQy16qka_cq7JnXTvRb2zgIETiUpHivvM3o8cO72I9Ro2GmvrPBTd3-hMeeqsyEe8&_nc_zt=1&_nc_ht=scontent.fcgk6-2.fna&_nc_gid=Ocf8EVgF9cmq74pxiqRZzQ&_nc_ss=7b2a8&oh=00_Af_4h4YcLV4z7u8mso3ZzRa3LXPzwABVRx0O9VSKPL6Kqw&oe=6A248D11" />
-    
-    <!-- Tipe konten -->
-    <meta property="og:type" content="website" />
-
-    <!-- Judul Tab Browser saat dibuka -->
-    <title>Mengarahkan ke Halaman Produk...</title>
-    
-    <!-- Memanggil CSS -->
+    <title>Affiliate Link Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <p>Sedang mengarahkan ke Shopee...</p>
-        <div class="loader"></div>
+    <div class="dashboard-container">
+        <h2>🚀 FB Link Affiliate Generator</h2>
+        <p class="subtitle">Buat link pancingan Facebook tanpa repot ubah kodingan</p>
+        
+        <div class="form-group">
+            <label for="judul">Judul Postingan Facebook (Clickbait):</label>
+            <input type="text" id="judul" placeholder="Contoh: Promo Gila Baju Tidur Murah Banget!">
+        </div>
+
+        <div class="form-group">
+            <label for="gambar">Link Gambar Kolase (URL Gambar):</label>
+            <input type="text" id="gambar" placeholder="Masukkan URL gambar yang sudah di-upload...">
+        </div>
+
+        <div class="form-group">
+            <label for="shopee">Link Affiliate Shopee Tujuan:</label>
+            <input type="text" id="shopee" placeholder="https://shopee.co.id/product/...">
+        </div>
+
+        <button id="btnGenerate" class="btn-primary">Generate Link Promosi</button>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <label>Link Siap Tempel di Facebook:</label>
+            <div class="copy-box">
+                <input type="text" id="hasilLink" readonly>
+                <button id="btnCopy">Copy</button>
+            </div>
+            <p class="tips">*Tempel link ini di Facebook, tunggu gambar muncul, lalu hapus link-nya dan ganti dengan caption-mu!</p>
+        </div>
     </div>
 
-    <!-- Memanggil JavaScript -->
     <script src="app.js"></script>
 </body>
 </html>
