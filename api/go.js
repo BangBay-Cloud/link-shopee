@@ -1,28 +1,31 @@
 export default function handler(req, res) {
-    // Membaca kiriman data dari parameter link (?t=judul&i=gambar&u=shopee)
     const { t, i, u } = req.query;
     
     const judulPromo = t || "Promo Spesial Hari Ini!";
     const linkGambar = i || "";
     const linkShopee = u || "https://shopee.co.id";
 
-    // Set agar output yang dikeluarkan berupa halaman HTML utuh
     res.setHeader('Content-Type', 'text/html');
     
-    // Kirim HTML instan ke Facebook / Browser Pengunjung dengan pemaksa gambar besar
     res.status(200).send(`
         <!DOCTYPE html>
         <html lang="id">
         <head>
             <meta charset="UTF-8">
-            <!-- Meta tags dinamis yang dibaca sistem Facebook -->
             <meta property="og:title" content="${judulPromo}" />
             <meta property="og:description" content="Klik untuk melihat promo selengkapnya..." />
+            
+            <!-- MENYUNTIKKAN URL GAMBAR UTAMA -->
             <meta property="og:image" content="${linkGambar}" />
             
-            <!-- TAG PENTING: Memaksa Facebook menampilkan pratinjau gambar besar/full -->
+            <!-- TRIK BARU: Menyediakan fallback multi-rasio agar AI Facebook dipaksa memilih layout besar -->
+            <meta property="og:image:type" content="image/jpeg" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
+            
+            <!-- Menambahkan tag cadangan untuk rasio square/potret jika Facebook bersikeras -->
+            <meta property="og:image:width" content="600" />
+            <meta property="og:image:height" content="600" />
             
             <meta property="og:type" content="website" />
             <title>Mengarahkan ke Halaman Produk...</title>
@@ -38,7 +41,6 @@ export default function handler(req, res) {
                 <div class="loader"></div>
             </div>
             <script>
-                // Paksa lempar pengunjung asli langsung ke aplikasi/web Shopee
                 window.location.replace("${linkShopee}");
             </script>
         </body>
