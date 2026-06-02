@@ -37,7 +37,7 @@ fileGambar.addEventListener('change', async () => {
 
         if (data.success) {
             // Simpan url gambar langsung dari internet ke input tersembunyi
-            inputGambarHidden.value = data.data.url;
+            inputGambarHidden.value = data.data.display_url;
             uploadStatus.innerText = '✅ Gambar siap digunakan!';
             uploadStatus.style.color = '#00cc55';
         } else {
