@@ -20,12 +20,12 @@
         </div>
 
         <div class="form-group">
-            <label for="gambar">Link Gambar Kolase (URL Gambar):</label>
+            <label for="fileGambar">Pilih Gambar Kolase Produk (dari PC/HP):</label>
             <div class="upload-helper-row">
-                <input type="text" id="gambar" placeholder="Masukkan URL gambar (.jpg / .png)...">
-                <a href="https://postimages.org/" target="_blank" class="btn-upload-link">Upload Gambar 📂</a>
+                <input type="file" id="fileGambar" accept="image/*">
             </div>
-            <p class="helper-text">*Klik tombol upload untuk dapatkan URL gambar gratis jika belum punya link gambar.</p>
+            <input type="hidden" id="gambar">
+            <p class="helper-text" id="uploadStatus">*Gambar akan otomatis di-upload ke server internet saat kamu memilih file.</p>
         </div>
 
         <div class="form-group">
